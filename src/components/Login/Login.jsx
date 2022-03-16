@@ -1,27 +1,27 @@
 import React from 'react';
 import './css/index.css';
-import firebaseApp from '@config/firebaseApp';
-
 import { useState } from 'react';
+import firebaseApp from '@config/firebaseApp';
 
 const Fauth = firebaseApp.auth();
 
 function Login() {
   const [email, setEmail] = useState(undefined);
   const [password, setPassword] = useState(undefined);
+
   const doLogin = (e) => {
     e.preventDefault();
     Fauth.signInWithEmailAndPassword(email, password)
       .then((credential) => {
-        // Signed in
+        // var user = userCredential.user;
         const { user } = credential;
         console.log(user);
-        // ...
       })
       .catch((err) => {
         console.log(err);
       });
   };
+
   return (
     <div className="login">
       <div className="wrapper">
@@ -45,8 +45,8 @@ function Login() {
               <input
                 type="password"
                 placeholder="이메일을 입력하세요"
-                required
                 onBlur={(e) => setPassword(e.target.value)}
+                required
               />
             </div>
           </div>
