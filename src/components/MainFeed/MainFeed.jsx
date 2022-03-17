@@ -1,5 +1,5 @@
 import React from 'react';
-import './css/index.css';
+import './index.scss';
 
 function MainFeed() {
   return (
@@ -19,16 +19,126 @@ function MainFeed() {
             </div>
           </div>{' '}
           {/* e:쓰기  */}
+          <div className='feed'>
+            {/* e:feed-text */}
+            <div className="top">
+                <div className="profile-image"></div>
+                <div className="profile-desc">
+                  <div className="nick-name txt-bold">yeahhaaa</div>
+                  <div className="timestamp">07:00</div>
+                </div>
+            </div>{/* top */}
+            <div className="contents">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque nisi enim excepturi a, quod distinctio quisquam corrupti itaque blanditiis modi. Ipsum ullam, veritatis nam perspiciatis sunt ab recusandae quaerat possimus?
+            </div>
+            <div className="bottom">
+              <div className="like">
+                  <div className='asset'>
+                       <img src="/assets/feed/like-ac.svg" alt="좋아요" />
+                  </div>
+                    <div className="count txt-bold"></div>
+                </div>
+                   <div className="comment">
+                <div className='asset'>
+                <img src="/assets/feed/comment.svg" alt="댓글" />
+                </div>
+                     <div className="count txt-bold">50</div>
+                </div>
+            </div>
+          </div>
+          <div className='feed'>
+            {/* e:feed-text */}
+            <div className="top">
+                <div className="profile-image"></div>
+                <div className="profile-desc">
+                  <div className="nick-name txt-bold">yeahhaaa</div>
+                  <div className="timestamp">07:00</div>
+                </div>
+            </div>{/* top */}
+            <div className="contents">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque nisi enim excepturi a, quod distinctio quisquam corrupti itaque blanditiis modi. Ipsum ullam, veritatis nam perspiciatis sunt ab recusandae quaerat possimus?
+                <div className="image"></div>
+            </div>
+            <div className="bottom">
+              <div className="like">
+                  <div className='asset'>
+                       <img src="/assets/feed/like-ac.svg" alt="좋아요" />
+                  </div>
+                    <div className="count txt-bold"></div>
+                </div>
+                   <div className="comment">
+                <div className='asset'>
+                <img src="/assets/feed/comment.svg" alt="댓글" />
+                </div>
+                     <div className="count txt-bold">50</div>
+                </div>
+            </div>
+          </div>
+          <div className='feed'>
+            {/* e:feed-text */}
+            <div className="top">
+                <div className="profile-image"></div>
+                <div className="profile-desc">
+                  <div className="nick-name txt-bold">yeahhaaa</div>
+                  <div className="timestamp">07:00</div>
+                </div>
+            </div>{/* top */}
+            <div className="contents">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque nisi enim excepturi a, quod distinctio quisquam corrupti itaque blanditiis modi. Ipsum ullam, veritatis nam perspiciatis sunt ab recusandae quaerat possimus?
+            </div>
+            <div className="bottom">
+              <div className="like">
+                  <div className='asset'>
+                       <img src="/assets/feed/like-ac.svg" alt="좋아요" />
+                  </div>
+                    <div className="count txt-bold"></div>
+                </div>
+                   <div className="comment">
+                <div className='asset'>
+                <img src="/assets/feed/comment.svg" alt="댓글" />
+                </div>
+                     <div className="count txt-bold">50</div>
+                </div>
+            </div>
+          </div>
+          <div className='feed'>
+            {/* e:feed-text */}
+            <div className="top">
+                <div className="profile-image"></div>
+                <div className="profile-desc">
+                  <div className="nick-name txt-bold">yeahhaaa</div>
+                  <div className="timestamp">07:00</div>
+                </div>
+            </div>{/* top */}
+            <div className="contents">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque nisi enim excepturi a, quod distinctio quisquam corrupti itaque blanditiis modi. Ipsum ullam, veritatis nam perspiciatis sunt ab recusandae quaerat possimus?
+                <div className="image"></div>
+            </div>
+            <div className="bottom">
+              <div className="like">
+                  <div className='asset'>
+                       <img src="/assets/feed/like-ac.svg" alt="좋아요" />
+                  </div>
+                    <div className="count txt-bold"></div>
+                </div>
+                   <div className="comment">
+                <div className='asset'>
+                <img src="/assets/feed/comment.svg" alt="댓글" />
+                </div>
+                     <div className="count txt-bold">50</div>
+                </div>
+            </div>
+          </div>
         </div>
         {/* e:feed-list */}
         <div className="friend-list">
           <div className="my-profile">
             <div className="profile-image"></div>
-            <div className="nickname"> hjwon </div>
+            <div className="nickname">Mickey</div>
           </div>
           {/* 마이프로필 */}
           <div className="my-friends">
-            <div className="title txt-bold">친구 목록 리스트</div>
+            <div className="title txt-bold">Friends list</div>
             <ul className="friend-list-wrapper">
               <li className="friend">
                 <div className="profile-image"></div>

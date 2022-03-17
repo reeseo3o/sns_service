@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { useCallback, useEffect } from 'react';
 import './css/index.css';
 import { useState } from 'react';
 import firebaseApp from '@config/firebaseApp';
+import {useHistory} from 'react-router-dom';
+import {useDispatch} from 'react-redux';
+import {_UPDATE_HEADER_STATE_} from '@dispatchers/layouts';
+
+/* @의미 : 경로를 이름으로만 찾을 수 있게 해주는 것 */
 
 const Fauth = firebaseApp.auth();
 
 function Login() {
+  const dispatch=useDispatch();
   const [email, setEmail] = useState(undefined);
   const [password, setPassword] = useState(undefined);
+  const history=useHistory();
 
   const doLogin = (e) => {
     e.preventDefault();
@@ -15,13 +22,30 @@ function Login() {
       .then((credential) => {
         // var user = userCredential.user;
         const { user } = credential;
-        console.log(user);
+        console.log(user)
+        history.push('/feed');
+          dispatch({
+            type:_UPDATE_HEADER_STATE_,
+            payload:true,
+          })
       })
       .catch((err) => {
         console.log(err);
       });
   };
-
+  const goJoin = useCallback(
+  ()=>{
+    history.push('/join')
+  },
+  [history],
+  )
+  /* 헤더부분 */
+  useEffect(()=>{
+    dispatch({
+      type:_UPDATE_HEADER_STATE_,
+      payload:false,
+    })
+  },[dispatch])
   return (
     <div className="login">
       <div className="wrapper">
@@ -57,7 +81,7 @@ function Login() {
         <div className="go-join">
           <div className="title txt-bold">회원가입</div>
           <div className="asset">
-            <img src="/assets/welcome/arrow.svg" alt="회원가입하기" />
+            <img src="/assets/welcome/arrow.svg" alt="회원가입하기" onClick={goJoin}/>
           </div>
         </div>
         {/* 하단 조인 */}

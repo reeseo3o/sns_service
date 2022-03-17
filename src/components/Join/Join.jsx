@@ -1,11 +1,14 @@
 import React from 'react';
 import './join.scss';
 import { useState, useCallback } from 'react';
+import {useHistory} from 'react-router-dom';
+
 function Join() {
   const [email, setEmail] = useState(undefined);
   const [password, setPassword] = useState(undefined);
   const [nickname, setNickname] = useState(undefined);
   const [isNicknameExist, setisNicknameExist] = useState(false);
+  const history=useHistory();
   const createUser = useCallback(() => {
     if (email && nickname && password && password.length >= 8) {
       let url = '/user/new';
@@ -24,11 +27,13 @@ function Join() {
         .then((res) => res.json())
         .then(({ msg }) => {
           console.log(msg);
+          history.push('/');
         })
         .catch((err) => {
           console.log(err);
         });
-      console.log('입력조건에 부합하지 않습니다.');
+      }else{
+      alert('입력조건에 부합하지 않습니다.');
     }
   }, [email, password, nickname]);
   return (
